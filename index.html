@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Inference Engine</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <style>
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .form-check {
+            flex: 1;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+</head>
+
+<body>
+    <div class="container form-container" style="width: 80%;">
+        <form onsubmit="myFunction()" style="width: 100%;">
+            <h1 class="text-center">Inference Engine</h1>
+            <div class="form-group">
+                <label for="rules">Rules Bases</label>
+                <textarea class="form-control" id="rules" rows="10" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="facts">Fact Bases</label>
+                <input type="text" class="form-control" id="facts" required>
+            </div>
+            <div class="form-group">
+                <label for="goal">Goal</label>
+                <input type="text" class="form-control" id="goal" maxlength="1" required>
+            </div>
+            <div class="form-group d-flex justify-content-between">
+                <div>
+                    <label>Type of chaining</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="chaining" id="forward" value="forward"
+                            required>
+                        <label class="form-check-label" for="forward">Forward</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="chaining" id="backward" value="backward"
+                            required>
+                        <label class="form-check-label" for="backward">Backward</label>
+                    </div>
+                </div>
+                <div>
+                    <label>Algorithm</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="algorithm" id="dfs" value="dfs" required>
+                        <label class="form-check-label" for="dfs" id="dfs_chainig">Depth-First Search</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="algorithm" id="bfs" value="bfs" required>
+                        <label class="form-check-label" for="bfs" id="bfs_chainig">Breadth-First Search</label>
+                    </div>
+                </div>
+
+
+            </div>
+            
+            <div>
+                <label>Time : </label>
+
+                <label for="fast">Fast</label>
+                <input type="radio" id="fast" name="speed" value="fast" checked>
+
+                <label for="slow">Slow</label>
+                <input type="radio" id="slow" name="speed" value="slow">
+            </div> 
+            <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            <h5 id="algo" style="margin-top: 20px;">
+                <p id="trace" style="color: blue;"></p>
+            </h5>
+        </form>
+    </div>
+    <script src="index.js">
+
+    </script>
+</body>
+
+</html>
